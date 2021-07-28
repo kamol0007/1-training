@@ -15,6 +15,7 @@ var header = document.getElementById("header");
 var back_to_top = document.getElementById("back-to-top");
 var sticky = false;
 function Scrolling() {
+    console.log('window.pageYOffset', window.pageYOffset);
     if(window.pageYOffset>50){
         if(!sticky){
             header.classList.add("scroll-header"); 
