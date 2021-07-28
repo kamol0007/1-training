@@ -383,7 +383,84 @@ a{
 #about-us .about-content ul li .fa {
     padding-right: 20px;
 }
+/* post aection */
+#post{
+    text-align: center;
+}
+#post .row{
+}
+#post .post-item{
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 35px rgb(0 0 0 / 10%);
+    margin-bottom: 20px;
+}
+#post #add-post-item{
+    display: block;
+    padding: 10px;
+    text-align: left;
+}
+#post #add-post-item label{
+    display: block;
+    color: #555;
+}
+#post .post-item .img-target{
+    padding: 20px;
+    width: 40%;
+}
+#post .post-item .context{
+    text-align: left;
+    width: 60%;
+    padding: 20px;
+}
+#post .post-item img{
+    max-width: 100%;
+    max-height: 100%;
+}
+#post .add-post button{
+    opacity: .9;
+    background: #71c55d;
+    border: 0;
+    border-radius: 0;
+    height: 50px;
+    width: 200px;
+    transition: 0.3s;
+    color: #fff;
+    cursor: pointer;
+}
+.label-img{
+    display: inline-block !important;
+    background-color: #fff;
+    color: #555;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    cursor: pointer;
+    margin: 1rem 0;
+    border: 1px solid #ced4da;
+    text-align: center;
 
+}
+.label-img img{
+    width: 80px;
+}
+.label-img #upload{
+    display: none;
+}
+#post input, #post textarea{
+    display: block;
+    width: 100%;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+    padding: 12px 10px;
+    line-height: 1;
+    margin-bottom: 10px;
+}
 /* new sletter section */
 #newsletter {
     background: transparent url(../img/newsletter-bg.jpg) no-repeat center top fixed;

@@ -108,7 +108,7 @@
 		</div>
     </div>
 </section>
-<section id="get-started" class="section">
+<section id="post" class="section">
     <div class="container">
         <div class="section-title text-center">
 			<h2>Posts</h2>
@@ -116,32 +116,56 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="get-started-item">
-            	<div class="feature-block">
+        <div id="post_target" class="row">
+            <div class="post-item">
+            	<div class="img-target">
 					<img src="img/svg/cloud.svg" alt="img" class="img-fluid">
+				</div>
+				<div class="context">
+					<div>
+						<span>t</span>
+						<span>b</span>
+					</div>
 					<h4>introducing whatsapp</h4>
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry dummy text of the printing</p>
 					<a href="#">read more</a>
             	</div>
             </div>
-            <div class="get-started-item">
-              	<div class="feature-block">
-					<img src="img/svg/planet.svg" alt="img" class="img-fluid">
-					<h4>user friendly interface</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry dummy text of the printing</p>
-					<a href="#">read more</a>
-              	</div>
-            </div>
-            <div class="get-started-item">
-				<div class="feature-block">
-					<img src="img/svg/asteroid.svg" alt="img" class="img-fluid">
-					<h4>build the app everyone love</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry dummy text of the printing</p>
-					<a href="#">read more</a>
-				</div>
-            </div>
+           
         </div>
+		<div id="add-post-item" class="post-item">
+			<div>Add new post</div>
+			<form  id="add-post-form" method="post">
+				<div>
+					<label>Post title</label>
+					<input type="text" style="margin-bottom: 0;" placeholder="Post title"/>
+				</div>
+				<div>
+					<label id="upload_label" for="upload" class="label-img" >
+						<input type="file" id="upload" hidden />
+						<div>
+							<img src="img/upload.png" alt="upload" id="upload_img" />
+						</div>
+						Upload Image
+					</label>
+					
+				</div>
+				<div>
+					<label>Post discription</label>
+					<textarea rows="10" placeholder="Post discription"></textarea>
+				</div>
+				<div>
+					<button type="submit">Saqlash</button>
+					<button>Bekor qilish</button>
+				</div>
+			</form>
+		</div>
+		<div class="add-post">
+			<button><i class="fa fa-plus"></i> Yangi qo'shish</button>
+			<form>
+
+			</form>
+		</div>
     </div>
 </section>
 
