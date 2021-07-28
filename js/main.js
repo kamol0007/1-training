@@ -32,16 +32,48 @@ function Scrolling() {
 
 
 /*Add post*/
-const imgInp = document.getElementById("upload");
+
+const form = document.getElementById("add-post-form"), 
+    imgInp = document.getElementById("upload"),
+    addPost = document.getElementById("add-post"),
+    addPostItem = document.getElementById("add-post-item"),
+    postSaveClose = document.getElementById("post_save_close"),
+    postTitle = document.getElementById("post_title"),
+    postDiscription = document.getElementById("post_discription"),
+    uploadImg = document.getElementById("upload_img"),
+    uploadLabel = document.getElementById("upload_label"),
+    postTarget = document.getElementById("post_target");
+
+
+
+addPost.onclick = function() {
+    this.style.display='none';
+    addPostItem.style.display='block';
+}
+postSaveClose.onclick = function() {
+    addPostItem.style.display='none';
+    addPost.style.display='block';
+    postTitle.style.borderColor='#ced4da';
+    postDiscription.style.borderColor='#ced4da';
+    postTitle.value = '';
+    postDiscription.value = '';
+    uploadImg.src = 'img/upload.png';
+    imgInp.value = null;
+}
+postTitle.onchange = function() {
+    this.style.borderColor='#ced4da';
+}
+postDiscription.onchange = function() {
+    this.style.borderColor='#ced4da';
+}
+
 imgInp.onchange = function(evt){
+    uploadLabel.style.borderColor='#ced4da';
     const [file] = evt.target.files;
-    if (file) {
-        document.getElementById("upload_img").src = URL.createObjectURL(file);
-    }
+    if (file) uploadImg.src = URL.createObjectURL(file);
 }
 var add_post = function(event) {
     event.preventDefault();
-    console.log(event.target[1]);
     const title = event.target[0].value, img = event.target[1], discription = event.target[2].value;
     const [file] = img.files;
     let src = '', title_check = true, discription_check = true, img_check = true;
@@ -55,12 +87,19 @@ var add_post = function(event) {
     }
     if(file) src = URL.createObjectURL(file);
     else{
-        document.getElementById("upload_label").style.borderColor='red';
+        uploadLabel.style.borderColor='red';
         img_check = false; 
     }
-    if(title_check&&discription_check&&img_check) document.getElementById("post_target").insertAdjacentHTML('beforeend', 
-        '<div class="post-item"><div class="img-target"><img src="'+src+'" alt="img" class="img-fluid"></div><div class="context"><div><span>t</span><span>b</span></div><h4>'+title+'</h4><p>'+discription+'</p></div></div>'
-    );
+    if(title_check&&discription_check&&img_check){
+        postTarget.insertAdjacentHTML('beforeend', 
+            '<div class="post-item"><div class="img-target"><img src="'+src+'" alt="img" class="img-fluid"></div><div class="context"><div><span>t</span><span>b</span></div><h4>'+title+'</h4><p>'+discription+'</p></div></div>'
+        );
+        addPostItem.style.display='none';
+        addPost.style.display='block';
+        postTitle.value = '';
+        postDiscription.value = '';
+        uploadImg.src = 'img/upload.png';
+        imgInp.value = null;
+    }
 };
-var form = document.getElementById("add-post-form");
 form.addEventListener("submit", add_post, true);

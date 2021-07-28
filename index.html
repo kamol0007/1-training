@@ -138,7 +138,7 @@
 			<form  id="add-post-form" method="post">
 				<div>
 					<label>Post title</label>
-					<input type="text" style="margin-bottom: 0;" placeholder="Post title"/>
+					<input id="post_title" type="text" style="margin-bottom: 0;" placeholder="Post title"/>
 				</div>
 				<div>
 					<label id="upload_label" for="upload" class="label-img" >
@@ -148,23 +148,19 @@
 						</div>
 						Upload Image
 					</label>
-					
 				</div>
 				<div>
 					<label>Post discription</label>
-					<textarea rows="10" placeholder="Post discription"></textarea>
+					<textarea  id="post_discription"  rows="10" placeholder="Post discription"></textarea>
 				</div>
-				<div>
-					<button type="submit">Saqlash</button>
-					<button>Bekor qilish</button>
+				<div class="post_btn">
+					<button type="submit" id="post_save">Saqlash</button>
+					<button id="post_save_close" style="background: #898DA6">Bekor qilish</button>
 				</div>
 			</form>
 		</div>
-		<div class="add-post">
+		<div id="add-post" class="add-post" style="display: none;">
 			<button><i class="fa fa-plus"></i> Yangi qo'shish</button>
-			<form>
-
-			</form>
 		</div>
     </div>
 </section>

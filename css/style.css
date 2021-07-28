@@ -397,7 +397,7 @@ a{
 }
 #post #add-post-item{
     display: block;
-    padding: 10px;
+    padding: 20px;
     text-align: left;
 }
 #post #add-post-item label{
@@ -416,17 +416,6 @@ a{
 #post .post-item img{
     max-width: 100%;
     max-height: 100%;
-}
-#post .add-post button{
-    opacity: .9;
-    background: #71c55d;
-    border: 0;
-    border-radius: 0;
-    height: 50px;
-    width: 200px;
-    transition: 0.3s;
-    color: #fff;
-    cursor: pointer;
 }
 .label-img{
     display: inline-block !important;
@@ -461,6 +450,20 @@ a{
     line-height: 1;
     margin-bottom: 10px;
 }
+#post .post_btn button, #post .add-post button{
+    opacity: .9;
+    background: #71c55d;
+    border: 0;
+    border-radius: 0;
+    height: 50px;
+    width: 200px;
+    transition: 0.3s;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
 /* new sletter section */
 #newsletter {
     background: transparent url(../img/newsletter-bg.jpg) no-repeat center top fixed;
