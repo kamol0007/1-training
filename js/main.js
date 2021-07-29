@@ -58,8 +58,7 @@ postSaveClose.onclick = function() {
     postDiscription.value = '';
     uploadImg.src = 'img/upload.png';
     imgInp.value = null;
-    if(post_last_id>1) document.getElementById("post-"+(post_last_id-1) ).scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
-    else addPost.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+    addPost.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 };
 postTitle.onchange = function() {
     this.style.borderColor='#ced4da';
@@ -92,8 +91,9 @@ var add_post = function(event){
     }
     if(title_check&&discription_check&&img_check){
         postTarget.insertAdjacentHTML('beforeend', 
-            '<div id="post-'+post_last_id+'" class="post-item"><div class="img-target"><img src="'+src+'" alt="img" class="img-fluid"></div><div class="context"><div><span>t</span><span>b</span></div><h4>'+title+'</h4><p>'+discription+'</p></div></div>'
-        );
+            '<div id="post-'+post_last_id+'" class="post-item">  <div class="img-target"> <img src="'+src+'" alt="img" class="img-fluid">  </div> <div class="context"> <div class="context_btn">   <span>  <button style="background: #898DA6;"  onclick="downRelocated('+post_last_id+')"> <i class="fa fa-chevron-down" aria-hidden="true"></i>  </button> </span>  <span>  <button style="background: #898DA6;"  onclick="upRelocated('+post_last_id+')"> <i class="fa fa-chevron-up" aria-hidden="true"></i>  </button>  </span>   <span>  <button> <i class="fa fa-pencil" aria-hidden="true"></i>  </button>  </span>  <span> <button  style="background: red;"  onclick="deletePost('+post_last_id+')">  <i class="fa fa-trash-o" aria-hidden="true"></i> </button>  </span>  </div><h4>'+title+'</h4><p>'+discription+'</p></div> </div>'
+        
+            );
         addPostItem.style.display='none';
         addPost.style.display='block';
         postTitle.value = '';
@@ -105,3 +105,22 @@ var add_post = function(event){
     }
 };
 form.addEventListener("submit", add_post, true);
+
+/*Delete POst*/
+function deletePost(post_id){
+    var removeobj = document.getElementById("post-"+post_id);
+    removeobj.remove();
+}
+/*Relocated*/
+function upRelocated(post_id){
+    var el = document.getElementById("post-"+post_id),
+        el_up = document.getElementById("post-"+(post_id-1));;
+    postTarget.insertBefore(el, el_up);
+    el.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+}
+function downRelocated(post_id){
+    var el = document.getElementById("post-"+post_id),
+        el_up = document.getElementById("post-"+(post_id+1));;
+    postTarget.insertBefore(el, el_up.nextSibling);
+    el.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+}

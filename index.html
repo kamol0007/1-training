@@ -115,16 +115,30 @@
     </div>
     <div class="container">
         <div id="post_target" class="row">
-            <div class="post-item">
+            <div id="post-0" class="post-item">
             	<div class="img-target">
 					<img src="img/svg/cloud.svg" alt="img" class="img-fluid">
 				</div>
 				<div class="context">
-					<div>
-						<span>t</span>
+					<div class="context_btn">
+						<span>
+							<button style="background: #898DA6;" onclick="downRelocated(0)">
+								<i class="fa fa-chevron-down" aria-hidden="true"></i>
+							</button>
+						</span>
+						<span>
+							<button style="background: #898DA6;" onclick="upRelocated(0)">
+								<i class="fa fa-chevron-up" aria-hidden="true"></i>
+							</button>
+						</span>
 						<span>
 							<button>
-								<i class="fa fa-remove"></i>
+								<i class="fa fa-pencil" aria-hidden="true"></i>
+							</button>
+						</span>
+						<span>
+							<button  style="background: red;" onclick="deletePost(0)">
+								<i class="fa fa-trash-o" aria-hidden="true"></i>
 							</button>
 						</span>
 					</div>

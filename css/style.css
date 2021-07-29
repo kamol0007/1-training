@@ -451,7 +451,7 @@ a{
     line-height: 1;
     margin-bottom: 10px;
 }
-#post .post_btn button, #post .add-post button{
+#post .post_btn button, #post .add-post button, #post .context button{
     opacity: .9;
     background: #71c55d;
     border: 0;
@@ -463,7 +463,18 @@ a{
     cursor: pointer;
     margin-top: 10px;
 }
-
+#post .context button{
+    width: 30px;
+    height: 30px;
+}
+#post .context .context_btn{
+    text-align: right;
+}
+@media (max-width: 450px) {
+    #post .img-target, #post .context{
+        width: 100% !important;
+    }
+} 
 
 /* new sletter section */
 #newsletter {
