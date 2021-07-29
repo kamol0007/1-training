@@ -114,13 +114,14 @@ function deletePost(post_id){
 /*Relocated*/
 function upRelocated(post_id){
     var el = document.getElementById("post-"+post_id),
-        el_up = document.getElementById("post-"+(post_id-1));;
+        // el_up = document.getElementById("post-"+(post_id-1));
+        el_up = document.getElementById("post-"+post_id).previousSibling;
     postTarget.insertBefore(el, el_up);
     el.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 }
 function downRelocated(post_id){
     var el = document.getElementById("post-"+post_id),
-        el_up = document.getElementById("post-"+(post_id+1));;
+        el_up = document.getElementById("post-"+post_id).nextSibling;
     postTarget.insertBefore(el, el_up.nextSibling);
     el.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 }
