@@ -91,8 +91,7 @@ var add_post = function(event){
     }
     if(title_check&&discription_check&&img_check){
         postTarget.insertAdjacentHTML('beforeend', 
-            '<div id="post-'+post_last_id+'" class="post-item">  <div class="img-target"> <img src="'+src+'" alt="img" class="img-fluid">  </div> <div class="context"> <div class="context_btn">   <span>  <button style="background: #898DA6;"  onclick="downRelocated('+post_last_id+')"> <i class="fa fa-chevron-down" aria-hidden="true"></i>  </button> </span>  <span>  <button style="background: #898DA6;"  onclick="upRelocated('+post_last_id+')"> <i class="fa fa-chevron-up" aria-hidden="true"></i>  </button>  </span>   <span>  <button> <i class="fa fa-pencil" aria-hidden="true"></i>  </button>  </span>  <span> <button  style="background: red;"  onclick="deletePost('+post_last_id+')">  <i class="fa fa-trash-o" aria-hidden="true"></i> </button>  </span>  </div><h4>'+title+'</h4><p>'+discription+'</p></div> </div>'
-        
+            '<div id="post-'+post_last_id+'" class="post-item">  <div class="img-target"> <img src="'+src+'" alt="img" class="img-fluid">  </div> <div class="context"> <div class="context_btn">   <span>  <button style="background: #898DA6;"  onclick="downRelocated('+post_last_id+')"> <i class="fa fa-chevron-down" aria-hidden="true"></i>  </button> </span>  <span>  <button style="background: #898DA6;"  onclick="upRelocated('+post_last_id+')"> <i class="fa fa-chevron-up" aria-hidden="true"></i>  </button>  </span>  <span> <button  style="background: red;"  onclick="deletePost('+post_last_id+')">  <i class="fa fa-trash-o" aria-hidden="true"></i> </button>  </span>  </div><h4>'+title+'</h4><p>'+discription+'</p></div> </div>'
             );
         addPostItem.style.display='none';
         addPost.style.display='block';
@@ -116,7 +115,6 @@ function deletePost(post_id){
 function upRelocated(post_id){
     var el = document.getElementById("post-"+post_id),
         el_up = document.getElementById("post-"+post_id);
-        console.log(postTarget, postTarget.childNodes, postTarget.firstChild);
     if(el_up.previousSibling&&postTarget.firstChild){
         postTarget.insertBefore(el, el_up.previousSibling);
         el.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
